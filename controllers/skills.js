@@ -2,7 +2,8 @@ const devSkills = require('../models/skill');
 
 module.exports = {
     index,
-    show
+    show,
+    new: newSkills
   };
   
   function index(req, res) {
@@ -17,4 +18,8 @@ module.exports = {
       skill: devSkills.getOne(req.params.id),
       title: 'Dev-Skills Details'
     });
+  }
+
+  function newSkills(req, res) {
+    res.render('skills/new', {title: 'New Dev Skill'});
   }
